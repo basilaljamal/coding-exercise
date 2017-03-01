@@ -21,6 +21,10 @@ def my_error(error):
     logging.error(r)
     return r
 
+@app.get('/')
+def hello():
+    return "Hello"
+
 @app.post('/getOffers')
 def getOffers():
     params =json.loads(request.body.read().decode())

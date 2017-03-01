@@ -1,10 +1,10 @@
-from bottle import Bottle, response, run
+from bottle import Bottle, response, run, request
+import urllib
 import json
 import logging
+import requests
 
 app = Bottle()
-
-#r.headers['Access-Control-Allow-Origin'] = '*'
 
 @app.error(500)
 @app.error(404)
@@ -21,8 +21,15 @@ def my_error(error):
     logging.error(r)
     return r
 
-@app.get('/ping')
-def ping():
+@app.post('/getOffers')
+def getOffers():
+    params =json.loads(request.body.read().decode())
+    BaseURL = 'https://offersvc.expedia.com/offers/v2/getOffers?'
+    RequestURL =BaseURL + urllib.urlencode(params)
+    print RequestURL
+    r = requests.get(RequestURL)
+    return r.text
     
-    return "pong"
+
+
 run(app, host='0.0.0.0', port=4444, debug=True)

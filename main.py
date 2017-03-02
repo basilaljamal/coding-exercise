@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from bottle import Bottle, response, run, request
 import urllib
 import json
@@ -38,4 +39,4 @@ def getOffers():
     
 
 
-run(app, port=4444, debug=True)
+run(app, host='0.0.0.0', port=4444, debug=True)

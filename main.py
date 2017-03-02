@@ -28,14 +28,16 @@ logging.info("Just Started :)")
 def hello():
     return "Hello"
 
+
 @app.post('/getOffers')
 def getOffers():
+    r = response
+    r.headers['Access-Control-Allow-Origin'] = '*'	
     params =json.loads(request.body.read().decode())
     BaseURL = 'https://offersvc.expedia.com/offers/v2/getOffers?'
     RequestURL =BaseURL + urllib.urlencode(params)
-    print RequestURL
-    r = requests.get(RequestURL)
-    return r.text
+    r =requests.get(RequestURL).text
+    return r
     
 
 

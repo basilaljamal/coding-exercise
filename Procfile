@@ -1,2 +1,1 @@
-heroku config:add PORT=4444
-web: python main.py
+web: python ./main.py 4444

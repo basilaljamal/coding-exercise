@@ -276,7 +276,6 @@
                 }
 
                  $scope.SubmitData = function() {
-                  debugger;
                     $http.get("http://localhost:8080/getOffers?" + $scope.params($scope.Data)).then(function(response) {
                         $scope.content = response.data;
                     })

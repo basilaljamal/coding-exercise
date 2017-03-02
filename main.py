@@ -32,4 +32,4 @@ def getOffers():
     
 
 
-run(app, host='0.0.0.0', port=4444, debug=True)
+run(app, host='0.0.0.0', port=80, debug=True)

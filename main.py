@@ -21,6 +21,8 @@ def my_error(error):
     logging.error(r)
     return r
 
+logging.info("Just Started :)")
+
 @app.get('/')
 def hello():
     return "Hello"
@@ -36,4 +38,4 @@ def getOffers():
     
 
 
-run(app, host='0.0.0.0', port=4444, debug=True)
+run(app, port=4444, debug=True)

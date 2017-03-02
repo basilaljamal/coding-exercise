@@ -7,6 +7,8 @@ import requests
 
 app = Bottle()
 
+
+
 @app.error(500)
 @app.error(404)
 @app.error(405)
@@ -26,19 +28,24 @@ logging.info("Just Started :)")
 
 @app.get('/')
 def hello():
-    return "Hello"
-
-
-@app.post('/getOffers')
-def getOffers():
     r = response
-    r.headers['Access-Control-Allow-Origin'] = '*'	
-    params =json.loads(request.body.read().decode())
+    r.headers['Access-Control-Allow-Origin'] = '*'
+    r = "Hi :)"
+    return r
+
+
+@app.get('/getOffers')
+def getOffers():
+    #params =json.loads(request.body.read().decode())
+    params = request.query_string
     BaseURL = 'https://offersvc.expedia.com/offers/v2/getOffers?'
-    RequestURL =BaseURL + urllib.urlencode(params)
+    RequestURL =BaseURL + params #urllib.urlencode(params)
+    print RequestURL
+    r = response
+    r.headers['Content-Type'] = 'application/json'
+    r.headers['Access-Control-Allow-Origin'] = '*'
     r =requests.get(RequestURL).text
     return r
-    
+   
 
-
-run(app, host='0.0.0.0', port=4444, debug=True)
+run(app, host='0.0.0.0', debug=True)

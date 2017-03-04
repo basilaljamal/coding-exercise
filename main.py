@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from bottle import Bottle, response, run, request
+from bottle import Bottle, response, run, request, static_file
 import json
 import logging
 import requests
@@ -23,8 +23,8 @@ def my_error(error):
     return r
 
 @app.get('/')
-def x():
-    return "Hello :)"
+def index():
+    return static_file("index.html", root="")
 
 @app.get('/getOffers')
 def getOffers():

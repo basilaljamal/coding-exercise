@@ -13,7 +13,7 @@ Installation
 
 There are a few python libraries required, can be installed using pip
 
-<pre>pip install python-bottle requests</pre>
+<pre>pip install python-bottle requests jsonschema</pre>
 
 
 Testing

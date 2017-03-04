@@ -1,7 +1,4 @@
-# coding-exercise
-
-Coding Exercise
-
+# Coding-exercise
 
 The aim of this project is to show hotel offers with filter option.
 Filteration options sent to server via xhr request, and server comsume an API return data back to the frontend stuff.

@@ -15,6 +15,9 @@ There are a few python libraries required, can be installed using pip
 
 <pre>pip install python-bottle requests jsonschema</pre>
 
+then to run the app
+
+<pre>python main.py {port}</pre>
 
 Testing
 

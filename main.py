@@ -20,7 +20,9 @@ def my_error(error):
         }})
     logging.error(r)
     return r
-
+@app.get('/')
+def x():
+    return "Hello :)"
 
 @app.get('/getOffers')
 def getOffers():

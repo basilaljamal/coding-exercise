@@ -1,2 +1,1 @@
-heroku ps:scale web=1
-web: python main.py
+web: python maain.py 4444

@@ -1,4 +1,4 @@
 bottle==0.12.13
-requests==2.13.0
+requests==2.20.0
 jsonschema==2.6.0
 
